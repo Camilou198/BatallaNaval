@@ -6,8 +6,11 @@ import java.util.Random;
 
 /**
  * Clase GUI_Secundaria
- * @autor
- * @autor
+ * @author Esteban Camilo: esteban.urbano@correounivalle.edu.co - 2224043
+ * @author David Ordoñez: david.camilo.ordonez@correounivalle.edu.co - 2226057
+ * @author Diana Sarmiento: diana.sarmiento@correounivalle.edu.co - 2222811
+ * @author Jhon Frank Vasquez: jhon.frank.vasquez@correounivalle.edu.co - 2226510
+ * @author Juan Felipe: juan.palechor@correounivalle.edu.co - 22270963
  * @version
  */
 public class Controller extends JFrame {
@@ -114,8 +117,8 @@ public class Controller extends JFrame {
                 oponenteVsUsuario();
             }else{
                 opponentBoard.getTableroOponente("principal").getCasillasOcupadas().put(opponentBoard.getTableroOponente("principal").getMatriz()[row][col], Integer.valueOf(2));
-                _view.getPanelTablero().getTablero("posicion").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/recursos/agua.png")));
-                opponentBoard.getTableroOponente("principal").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/recursos/agua.png")));
+                _view.getPanelTablero().getTablero("posicion").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/resources/agua.png")));
+                opponentBoard.getTableroOponente("principal").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/resources/agua.png")));
                 state = 0;
             }
         }
@@ -126,7 +129,7 @@ public class Controller extends JFrame {
      */
     public void funcionesCombate(int row, int col, String barco){
         // Establece una imagen a la casilla seleccionada del tablero posición del usuario si un barco fue tocado
-        _view.getPanelTablero().getTablero("posicion").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/recursos/tocado.png")));
+        _view.getPanelTablero().getTablero("posicion").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/resources/tocado.png")));
         opponentBoard.getTableroOponente("principal").getCasillasOcupadas().replace(opponentBoard.getTableroOponente("principal").getMatriz()[row][col], Integer.valueOf(2));
 
         // Reduce las casillas ocupadas del barco tocado para poder ser hundido
@@ -140,7 +143,7 @@ public class Controller extends JFrame {
                 for (int colu = 1; colu < 11; colu++) {
                     if(_view.getPanelTablero().getTablero("posicion").getCasillaNombreBarco().get(_view.getPanelTablero().getTablero("posicion").getMatriz()[fil][colu]) != null){
                         if(_view.getPanelTablero().getTablero("posicion").getCasillaNombreBarco().get(_view.getPanelTablero().getTablero("posicion").getMatriz()[fil][colu]).equals(barco)){
-                            _view.getPanelTablero().getTablero("posicion").getMatriz()[fil][colu].setIcon(new ImageIcon(getClass().getResource("/recursos/hundido.png")));
+                            _view.getPanelTablero().getTablero("posicion").getMatriz()[fil][colu].setIcon(new ImageIcon(getClass().getResource("/resources/hundido.png")));
                         }
                     }else{
                         continue;

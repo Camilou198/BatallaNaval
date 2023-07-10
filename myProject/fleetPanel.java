@@ -10,12 +10,15 @@ import java.awt.*;
 
 /**
  * Clase fleetPanel
- * @autor
- * @autor
+ * @author Esteban Camilo: esteban.urbano@correounivalle.edu.co - 2224043
+ * @author David Ordoñez: david.camilo.ordonez@correounivalle.edu.co - 2226057
+ * @author Diana Sarmiento: diana.sarmiento@correounivalle.edu.co - 2222811
+ * @author Jhon Frank Vasquez: jhon.frank.vasquez@correounivalle.edu.co - 2226510
+ * @author Juan Felipe: juan.palechor@correounivalle.edu.co - 22270963
  * @version
  */
 public class fleetPanel extends JPanel{
-    public static final String PATH ="/recursos/";
+    public static final String PATH = "/resources/";
     private JButton aircraftCarrier, destroyer, frigate, submarine, vertical, horizontal, yes, is, id, di,explanationButtons;
     private JPanel panelFleet, information, buttonsPanel, subpanelButtons, subpanelButtons1;
     private JLabel assignShift;
@@ -116,28 +119,28 @@ public class fleetPanel extends JPanel{
         horizontal.setBorder(null);
 
         // Botones de sentido
-        yes = new JButton("Superior-Inferior");
+        yes = new JButton("Abajo");
         yes.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
         yes.setBackground(new Color(255, 255, 255));
         yes.setForeground(Color.BLACK);
         yes.setFocusable(false);
         yes.setBorder(null);
 
-        is = new JButton("Inferior-Superior");
+        is = new JButton("Arriba");
         is.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
         is.setBackground(new Color(255, 255, 255));
         is.setForeground(Color.BLACK);
         is.setFocusable(false);
         is.setBorder(null);
 
-        id = new JButton("Izquierda-Derecha");
+        id = new JButton("Derecha");
         id.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
         id.setBackground(new Color(255, 255, 255));
         id.setForeground(Color.BLACK);
         id.setFocusable(false);
         id.setBorder(null);
 
-        di = new JButton("Derecha-Izquierda");
+        di = new JButton("Izquierda");
         di.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
         di.setBackground(new Color(255, 255, 255));
         di.setForeground(Color.BLACK);
@@ -278,16 +281,16 @@ public class fleetPanel extends JPanel{
      */
     public JButton getBotonSentidoOrientacion(String sentido){
         JButton boton = new JButton();
-        if(sentido.equals("sup_inf")){
+        if(sentido.equals("Abajo")){
             boton = yes;
         }else{
-            if(sentido.equals("inf_sup")){
+            if(sentido.equals("Arriba")){
                 boton = is;
             }else{
-                if(sentido.equals("izq_der")){
+                if(sentido.equals("Derecha")){
                     boton = id;
                 }else{
-                    if(sentido.equals("der_izq")){
+                    if(sentido.equals("Izquierda")){
                         boton = di;
                     }
                 }

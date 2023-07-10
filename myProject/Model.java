@@ -1,8 +1,11 @@
 package myProject;
 /**
  * Clase Combate
- * @autor
- * @autor
+ * @author Esteban Camilo: esteban.urbano@correounivalle.edu.co - 2224043
+ * @author David Ordoñez: david.camilo.ordonez@correounivalle.edu.co - 2226057
+ * @author Diana Sarmiento: diana.sarmiento@correounivalle.edu.co - 2222811
+ * @author Jhon Frank Vasquez: jhon.frank.vasquez@correounivalle.edu.co - 2226510
+ * @author Juan Felipe: juan.palechor@correounivalle.edu.co - 22270963
  * @version
  */
 public class Model {

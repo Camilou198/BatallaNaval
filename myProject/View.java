@@ -9,12 +9,15 @@ import java.awt.event.MouseListener;
 
 /**
  * Clase principal
- * @autor
- * @autor
+ * @author Esteban Camilo: esteban.urbano@correounivalle.edu.co - 2224043
+ * @author David Ordoñez: david.camilo.ordonez@correounivalle.edu.co - 2226057
+ * @author Diana Sarmiento: diana.sarmiento@correounivalle.edu.co - 2222811
+ * @author Jhon Frank Vasquez: jhon.frank.vasquez@correounivalle.edu.co - 2226510
+ * @author Juan Felipe: juan.palechor@correounivalle.edu.co - 2270963
  * @version
  */
 public class View extends JFrame {
-    public static final String PATH ="/recursos/";
+    public static final String PATH = "/resources/";
     public static final String HELP ="Batalla Naval es un juego tradicional de estrategia y suerte, que involucra a dos participantes (para este caso un jugador vs el computador).\n"+
             "\nEl objetivo del juego es ser el primero en hundir los barcos del oponente. \n"+"\nCada jugador tiene 2 tableros compuesto por 10 filas y 10 columnas: \n"+
             "\n-> Tablero de posición: Representa tu territorio, en él distribuirás tu flota antes de comenzar la partida y sólo será de observación. Verás la posición de tus barcos \ny los disparos de tu oponente en tu territorio, pero no podrás realizar ningún cambio ni disparo en él. \n"+
@@ -37,7 +40,7 @@ public class View extends JFrame {
     private int gameState;
     private Model model;
     private int sunk; // Contador de barcos hundidos
-    private Timer timer; // establece el tiempo que tarde el oponente en escoger casilla
+    private Timer timer; // establece el timer2 que tarde el oponente en escoger casilla
 
     /**
      * Constructor de la clase GUI
@@ -60,6 +63,7 @@ public class View extends JFrame {
      * crear objetos de escucha y control utilizados para la clase GUI
      */
     private void initGUI() {
+
         // Creación de la ventana del oponente
         opponentView = new Controller(this);
 
@@ -106,7 +110,7 @@ public class View extends JFrame {
 
         // JComponents de la parte superior
         headerProject = new Header("BATALLA NAVAL", Color.white);
-        northPanel.add(headerProject,FlowLayout.LEFT);
+        northPanel.add(headerProject,FlowLayout.LEFT );
 
         // Creación botón help
         help = new JButton("HELP");
@@ -234,15 +238,15 @@ public class View extends JFrame {
      */
     public void setOrientacionSentidoVertical(String evento){
         if(evento == "agregar"){
-            fleetPanel.getBotonSentidoOrientacion("sup_inf").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("inf_sup").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("sup_inf").setEnabled(true);
-            fleetPanel.getBotonSentidoOrientacion("inf_sup").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Abajo").addActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Arriba").addActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Abajo").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Arriba").setEnabled(true);
         }else{
-            fleetPanel.getBotonSentidoOrientacion("sup_inf").removeActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("inf_sup").removeActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("sup_inf").setEnabled(false);
-            fleetPanel.getBotonSentidoOrientacion("inf_sup").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Abajo").removeActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Arriba").removeActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Abajo").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Arriba").setEnabled(false);
         }
     }
 
@@ -252,15 +256,15 @@ public class View extends JFrame {
      */
     public void setOrientacionSentidoHorizontal(String evento){
         if(evento == "agregar"){
-            fleetPanel.getBotonSentidoOrientacion("der_izq").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("izq_der").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("der_izq").setEnabled(true);
-            fleetPanel.getBotonSentidoOrientacion("izq_der").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Izquierda").addActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Derecha").addActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Izquierda").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Derecha").setEnabled(true);
         }else{
-            fleetPanel.getBotonSentidoOrientacion("der_izq").removeActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("izq_der").removeActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("der_izq").setEnabled(false);
-            fleetPanel.getBotonSentidoOrientacion("izq_der").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Izquierda").removeActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Derecha").removeActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Izquierda").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Derecha").setEnabled(false);
         }
     }
 
@@ -312,8 +316,8 @@ public class View extends JFrame {
      */
     public void funcionesCombate(int row, int col, String barco){
         // Establece una imagen a la casilla seleccionada del tablero principal del usuario y del tablero posicion del oponente si un barco fue tocado
-        opponentView.getTableroOponente().getTableroOponente("posicion").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/recursos/tocado.png")));
-        boardPanel.getTablero("principal").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/recursos/tocado.png")));
+        opponentView.getTableroOponente().getTableroOponente("posicion").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/resources/tocado.png")));
+        boardPanel.getTablero("principal").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/resources/tocado.png")));
         boardPanel.getTablero("principal").getCasillasOcupadas().replace(boardPanel.getTablero("principal").getMatriz()[row][col], Integer.valueOf(2));
 
         // Reduce las casillas ocupadas del barco tocado para poder ser hundido
@@ -328,8 +332,8 @@ public class View extends JFrame {
                 for (int colu = 1; colu < 11; colu++) {
                     if(opponentView.getTableroOponente().getTableroOponente("posicion").getCasillaNombreBarco().get(opponentView.getTableroOponente().getTableroOponente("posicion").getMatriz()[fil][colu]) != null){
                         if(opponentView.getTableroOponente().getTableroOponente("posicion").getCasillaNombreBarco().get(opponentView.getTableroOponente().getTableroOponente("posicion").getMatriz()[fil][colu]).equals(barco)){
-                            opponentView.getTableroOponente().getTableroOponente("posicion").getMatriz()[fil][colu].setIcon(new ImageIcon(getClass().getResource("/recursos/hundido.png")));
-                            boardPanel.getTablero("principal").getMatriz()[fil][colu].setIcon(new ImageIcon(getClass().getResource("/recursos/hundido.png")));
+                            opponentView.getTableroOponente().getTableroOponente("posicion").getMatriz()[fil][colu].setIcon(new ImageIcon(getClass().getResource("/resources/hundido.png")));
+                            boardPanel.getTablero("principal").getMatriz()[fil][colu].setIcon(new ImageIcon(getClass().getResource("/resources/hundido.png")));
                         }
                     }else{
                         continue;
@@ -472,28 +476,28 @@ public class View extends JFrame {
                                             }
                                             break;
                                         case 3:
-                                            if (e.getSource() == fleetPanel.getBotonSentidoOrientacion("sup_inf")) {
+                                            if (e.getSource() == fleetPanel.getBotonSentidoOrientacion("Abajo")) {
                                                 setOrientacionSentidoVertical("remover");
                                                 fleetPanel.getInformacionJuego().setText("Selecciona la casilla en la que quieres ubicar la nave");
                                                 setEscuchaCasillas("agregar");
                                                 fleetPanel.setSentidoOrientacion(1);
                                                 gameState = 4;
                                             } else {
-                                                if (e.getSource() == fleetPanel.getBotonSentidoOrientacion("inf_sup")) {
+                                                if (e.getSource() == fleetPanel.getBotonSentidoOrientacion("Arriba")) {
                                                     setOrientacionSentidoVertical("remover");
                                                     fleetPanel.getInformacionJuego().setText("Selecciona la casilla en la que quieres ubicar la nave");
                                                     setEscuchaCasillas("agregar");
                                                     fleetPanel.setSentidoOrientacion(2);
                                                     gameState = 4;
                                                 } else {
-                                                    if (e.getSource() == fleetPanel.getBotonSentidoOrientacion("izq_der")) {
+                                                    if (e.getSource() == fleetPanel.getBotonSentidoOrientacion("Derecha")) {
                                                         setOrientacionSentidoHorizontal("remover");
                                                         fleetPanel.getInformacionJuego().setText("Selecciona la casilla en la que quieres ubicar la nave");
                                                         setEscuchaCasillas("agregar");
                                                         fleetPanel.setSentidoOrientacion(3);
                                                         gameState = 4;
                                                     } else {
-                                                        if (e.getSource() == fleetPanel.getBotonSentidoOrientacion("der_izq")) {
+                                                        if (e.getSource() == fleetPanel.getBotonSentidoOrientacion("Izquierda")) {
                                                             setOrientacionSentidoHorizontal("remover");
                                                             fleetPanel.getInformacionJuego().setText("Selecciona la casilla en la que quieres ubicar la nave");
                                                             setEscuchaCasillas("agregar");
@@ -584,8 +588,8 @@ public class View extends JFrame {
                                     }else{
                                         fleetPanel.getInformacionJuego().setText("Le diste al agua, espera el turno del oponente");
                                         boardPanel.getTablero("principal").getCasillasOcupadas().put(boardPanel.getTablero("principal").getMatriz()[row][col], Integer.valueOf(2));
-                                        opponentView.getTableroOponente().getTableroOponente("posicion").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/recursos/agua.png")));
-                                        boardPanel.getTablero("principal").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/recursos/agua.png")));
+                                        opponentView.getTableroOponente().getTableroOponente("posicion").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/resources/agua.png")));
+                                        boardPanel.getTablero("principal").getMatriz()[row][col].setIcon(new ImageIcon(getClass().getResource("/resources/agua.png")));
                                         gameState = 6;
                                         fleetPanel.getAsignarTurno().setText("¡Turno del oponente!");
                                         timer.start();

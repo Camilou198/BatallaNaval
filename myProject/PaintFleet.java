@@ -5,8 +5,11 @@ import java.util.ArrayList;
 
 /**
  * Clase PaintFleet
- * @autor
- * @autor
+ * @author Esteban Camilo: esteban.urbano@correounivalle.edu.co - 2224043
+ * @author David Ordoñez: david.camilo.ordonez@correounivalle.edu.co - 2226057
+ * @author Diana Sarmiento: diana.sarmiento@correounivalle.edu.co - 2222811
+ * @author Jhon Frank Vasquez: jhon.frank.vasquez@correounivalle.edu.co - 2226510
+ * @author Juan Felipe: juan.palechor@correounivalle.edu.co - 22270963
  * @version
  */
 public class PaintFleet {
@@ -39,19 +42,19 @@ public class PaintFleet {
         if(estadoOrientacion == 0){
             switch(estadoSentidoOrientacion){
                 case 1:
-                    path = "/recursos/" + barco + "_V_S_I/";
+                    path = "/resources/" + barco + "_V_S_I/";
                     break;
                 case 2:
-                    path = "/recursos/" + barco + "_V_I_S/";
+                    path = "/resources/" + barco + "_V_I_S/";
                     break;
             }
         }else{
             switch(estadoSentidoOrientacion){
                 case 3:
-                    path = "/recursos/" + barco + "_H_I_D/";
+                    path = "/resources/" + barco + "_H_I_D/";
                     break;
                 case 4:
-                    path = "/recursos/" + barco + "_H_D_I/";
+                    path = "/resources/" + barco + "_H_D_I/";
                     break;
             }
         }
