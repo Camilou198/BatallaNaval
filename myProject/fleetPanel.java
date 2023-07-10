@@ -280,16 +280,16 @@ public class fleetPanel extends JPanel{
      */
     public JButton getBotonSentidoOrientacion(String sentido){
         JButton boton = new JButton();
-        if(sentido.equals("Abajo")){
+        if(sentido.equals("Arriba")){
             boton = yes;
         }else{
-            if(sentido.equals("Arriba")){
+            if(sentido.equals("Abajo")){
                 boton = is;
             }else{
-                if(sentido.equals("Derecha")){
+                if(sentido.equals("Izquierda")){
                     boton = id;
                 }else{
-                    if(sentido.equals("Izquierda")){
+                    if(sentido.equals("Derecha")){
                         boton = di;
                     }
                 }

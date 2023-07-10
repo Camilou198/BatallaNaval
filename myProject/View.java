@@ -66,7 +66,6 @@ public class View extends JFrame {
         // Creación de la ventana del oponente
         opponentView = new Controller(this);
 
-
         // Set up JFrame Container's Layout
         northPanel = new JPanel();
         southPanel = new JPanel();
@@ -268,15 +267,15 @@ public class View extends JFrame {
      */
     public void setOrientacionSentidoVertical(String evento){
         if(evento == "agregar"){
-            fleetPanel.getBotonSentidoOrientacion("Abajo").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Arriba").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Abajo").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Abajo").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Arriba").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Abajo").setEnabled(true);
         }else{
-            fleetPanel.getBotonSentidoOrientacion("Abajo").removeActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Arriba").removeActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Abajo").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Arriba").addActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Abajo").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Arriba").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Abajo").setEnabled(false);
         }
     }
 
@@ -286,15 +285,15 @@ public class View extends JFrame {
      */
     public void setOrientacionSentidoHorizontal(String evento){
         if(evento == "agregar"){
-            fleetPanel.getBotonSentidoOrientacion("Izquierda").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Derecha").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Izquierda").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Izquierda").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Derecha").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Izquierda").setEnabled(true);
         }else{
-            fleetPanel.getBotonSentidoOrientacion("Izquierda").removeActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Derecha").removeActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Izquierda").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Derecha").addActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Izquierda").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Derecha").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Izquierda").setEnabled(false);
         }
     }
 
