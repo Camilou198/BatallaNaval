@@ -66,6 +66,7 @@ public class View extends JFrame {
         // Creación de la ventana del oponente
         opponentView = new Controller(this);
 
+
         // Set up JFrame Container's Layout
         northPanel = new JPanel();
         southPanel = new JPanel();
@@ -103,7 +104,7 @@ public class View extends JFrame {
         // Creación del panel Flota
         fleetPanel = new fleetPanel();
 
-        Instructions = new ImageIcon(getClass().getResource(PATH + "Instrucciones.jpg"));
+        Instructions = new ImageIcon(getClass().getResource(PATH + "ExplicacionBotones1.2.jpg"));
 
 
         // JComponents de la parte superior
@@ -267,15 +268,15 @@ public class View extends JFrame {
      */
     public void setOrientacionSentidoVertical(String evento){
         if(evento == "agregar"){
-            fleetPanel.getBotonSentidoOrientacion("Arriba").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Abajo").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Arriba").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Arriba").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Abajo").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Arriba").setEnabled(true);
         }else{
-            fleetPanel.getBotonSentidoOrientacion("Arriba").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Abajo").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Arriba").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Abajo").removeActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Arriba").removeActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Abajo").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Arriba").setEnabled(false);
         }
     }
 
@@ -285,15 +286,15 @@ public class View extends JFrame {
      */
     public void setOrientacionSentidoHorizontal(String evento){
         if(evento == "agregar"){
-            fleetPanel.getBotonSentidoOrientacion("Derecha").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Izquierda").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Derecha").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Derecha").addActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Izquierda").setEnabled(true);
+            fleetPanel.getBotonSentidoOrientacion("Derecha").setEnabled(true);
         }else{
-            fleetPanel.getBotonSentidoOrientacion("Derecha").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Izquierda").addActionListener(escucha);
-            fleetPanel.getBotonSentidoOrientacion("Derecha").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Izquierda").removeActionListener(escucha);
+            fleetPanel.getBotonSentidoOrientacion("Derecha").removeActionListener(escucha);
             fleetPanel.getBotonSentidoOrientacion("Izquierda").setEnabled(false);
+            fleetPanel.getBotonSentidoOrientacion("Derecha").setEnabled(false);
         }
     }
 
