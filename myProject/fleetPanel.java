@@ -39,19 +39,19 @@ public class fleetPanel extends JPanel{
         this.setLayout(gbl);
         this.setBackground(Color.WHITE);
         this.setPreferredSize(new Dimension(600,100));
-        barcos();
+        boats();
     }
 
     /**
-     * Creación de panel con los barcos y los botones de sentido y orientación
+     * Creación de panel con los boats y los botones de sentido y orientación
      */
-    public void barcos(){
+    public void boats(){
         GridBagConstraints gbc = new GridBagConstraints();
         
         orientation = 0;
         orientation1234 = 0;
 
-        // Cantidad inicial de barcos
+        // Cantidad inicial de boats
         quantityAircraftCarrier = 1;
         amountSubmarine = 2;
         amountDestroyer = 3;
@@ -103,44 +103,44 @@ public class fleetPanel extends JPanel{
         // Botones de orientación
         vertical = new JButton("Vertical");
         vertical.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
-        vertical.setBackground(new Color(0,0,128));
-        vertical.setForeground(Color.white);
+        vertical.setBackground(new Color(255, 255, 255));
+        vertical.setForeground(Color.BLACK);
         vertical.setFocusable(false);
         vertical.setBorder(null);
 
         horizontal = new JButton("Horizontal");
         horizontal.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
-        horizontal.setBackground(new Color(0,0,128));
-        horizontal.setForeground(Color.white);
+        horizontal.setBackground(new Color(255, 255, 255));
+        horizontal.setForeground(Color.BLACK);
         horizontal.setFocusable(false);
         horizontal.setBorder(null);
 
         // Botones de sentido
         yes = new JButton("Superior-Inferior");
         yes.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
-        yes.setBackground(new Color(0,0,128));
-        yes.setForeground(Color.white);
+        yes.setBackground(new Color(255, 255, 255));
+        yes.setForeground(Color.BLACK);
         yes.setFocusable(false);
         yes.setBorder(null);
 
         is = new JButton("Inferior-Superior");
         is.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
-        is.setBackground(new Color(0, 0, 128));
-        is.setForeground(Color.white);
+        is.setBackground(new Color(255, 255, 255));
+        is.setForeground(Color.BLACK);
         is.setFocusable(false);
         is.setBorder(null);
 
         id = new JButton("Izquierda-Derecha");
         id.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
-        id.setBackground(new Color(0,0,128));
-        id.setForeground(Color.white);
+        id.setBackground(new Color(255, 255, 255));
+        id.setForeground(Color.BLACK);
         id.setFocusable(false);
         id.setBorder(null);
 
         di = new JButton("Derecha-Izquierda");
         di.setFont(new Font(Font.SERIF,Font.ROMAN_BASELINE,15));
-        di.setBackground(new Color(0, 0, 128));
-        di.setForeground(Color.white);
+        di.setBackground(new Color(255, 255, 255));
+        di.setForeground(Color.BLACK);
         di.setFocusable(false);
         di.setBorder(null);
 
@@ -159,9 +159,9 @@ public class fleetPanel extends JPanel{
         line = BorderFactory.createLineBorder(Color.black);
         panelFleet = new JPanel();
         panelFleet.setLayout(new GridLayout(2,2,10,10));
-        panelFleet.setPreferredSize(new Dimension(350,300));
+        panelFleet.setPreferredSize(new Dimension(350,250));
         panelFleet.setBackground(Color.WHITE);
-        title = BorderFactory.createTitledBorder(line, "Tus barcos");
+        title = BorderFactory.createTitledBorder(line, "Barcos");
         title.setTitleJustification(TitledBorder.CENTER);
         panelFleet.setBorder(title);
         panelFleet.add(aircraftCarrier);
@@ -204,7 +204,7 @@ public class fleetPanel extends JPanel{
         buttonsPanel.setLayout(new GridLayout(0,2,5,10));
         buttonsPanel.setBackground(Color.WHITE);
         buttonsPanel.setPreferredSize(new Dimension(350,120));
-        title2 = BorderFactory.createTitledBorder(line, "Direcciones de tu flota");
+        title2 = BorderFactory.createTitledBorder(line, "Posición de tu flota");
         title2.setTitleJustification(TitledBorder.CENTER);
         buttonsPanel.setBorder(title2);
         gbc.gridx = 0;
@@ -272,8 +272,7 @@ public class fleetPanel extends JPanel{
         }
         return boton;
     }
-
-
+    
     /**
      * Retorna el botón del sentido de la orientación especificado
      */
