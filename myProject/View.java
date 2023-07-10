@@ -139,6 +139,16 @@ public class View extends JFrame {
         startGame.setFocusable(false);
         startGame.setBorder(null);
         southPanel.add(startGame,FlowLayout.LEFT);
+        startGame.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                startGame.setBackground(Color.green);
+
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                startGame.setBackground(Color.white);
+
+            }
+        });
 
         // Creación de botón de movimientos del oponente
         enemyMovements = new JButton("ENEMIGO");
@@ -147,6 +157,17 @@ public class View extends JFrame {
         enemyMovements.setFocusable(false);
         enemyMovements.setBorder(null);
         southPanel.add(enemyMovements,FlowLayout.CENTER);
+        enemyMovements.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+
+                enemyMovements.setBackground(Color.red);
+
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                enemyMovements.setBackground(Color.white);
+
+            }
+        });
 
         // Creación del botón de reinicio
         restart = new JButton("REINICIO");
@@ -155,6 +176,16 @@ public class View extends JFrame {
         restart.setFocusable(false);
         restart.setBorder(null);
         southPanel.add(restart,FlowLayout.CENTER);
+        restart.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+
+                restart.setBackground(Color.yellow);
+
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                restart.setBackground(Color.white);
+            }
+        });
 
         // Se agrega él escucha a todos los botones de todas las clases
         setEscuchaBotones("remover");
