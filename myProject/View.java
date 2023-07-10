@@ -362,7 +362,6 @@ public class View extends JFrame {
 
         @Override
 
-
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == restart) {
                 reset();

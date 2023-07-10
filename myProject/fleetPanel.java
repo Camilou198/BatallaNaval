@@ -350,16 +350,16 @@ public class fleetPanel extends JPanel{
      * @param barco
      */
     public void setCantidadBarco(String barco){
-        if(barco.equals("aircraftCarrier")){
+        if(barco.equals("portavion")){
             quantityAircraftCarrier--;
         }else{
-            if(barco.equals("submarine")){
+            if(barco.equals("submarino")){
                 amountSubmarine--;
             }else{
                 if(barco.equals("destructor")){
                     amountDestroyer--;
                 }else{
-                    if(barco.equals("frigate")){
+                    if(barco.equals("fragata")){
                         quantityFrigate--;
                     }
                 }
@@ -374,16 +374,16 @@ public class fleetPanel extends JPanel{
      */
     public int getCantidadBarco(String barco){
         int cantidad = 0;
-        if(barco.equals("aircraftCarrier")){
+        if(barco.equals("portavion")){
             cantidad = quantityAircraftCarrier;
         }else{
-            if(barco.equals("submarine")){
+            if(barco.equals("submarino")){
                 cantidad = amountSubmarine;
             }else{
                 if(barco.equals("destructor")){
                     cantidad = amountDestroyer;
                 }else{
-                    if(barco.equals("frigate")){
+                    if(barco.equals("fragata")){
                         cantidad = quantityFrigate;
                     }
                 }
