@@ -9,8 +9,7 @@ import java.awt.*;
  * @author David Ordoñez: david.camilo.ordonez@correounivalle.edu.co - 2226057
  * @author Diana Sarmiento: diana.sarmiento@correounivalle.edu.co - 2222811
  * @author Jhon Frank Vasquez: jhon.frank.vasquez@correounivalle.edu.co - 2226510
- * @author Juan Felipe: juan.palechor@correounivalle.edu.co - 22270963
- * @version
+ * @author Juan Felipe: juan.palechor@correounivalle.edu.co - 2270963
  */
 public class Header extends JLabel {
     /**

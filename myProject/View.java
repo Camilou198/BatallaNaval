@@ -14,7 +14,6 @@ import java.awt.event.MouseListener;
  * @author Diana Sarmiento: diana.sarmiento@correounivalle.edu.co - 2222811
  * @author Jhon Frank Vasquez: jhon.frank.vasquez@correounivalle.edu.co - 2226510
  * @author Juan Felipe: juan.palechor@correounivalle.edu.co - 2270963
- * @version
  */
 public class View extends JFrame {
     public static final String PATH = "/resources/";
